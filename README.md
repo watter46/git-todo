@@ -1,15 +1,9 @@
 # Laravel-npm_non-root
 
 ## バージョン
-- FrontEnd
-  - TypeScript 4.6
-  - Vue.js 3.2
-  - VueRouter 4.0
-  - VueDraggable(next) 4.1
-
 - Backend
   - PHP 8.1
-  - Laravel 8.0
+  - Laravel 9.0
 
 ## Usage
 

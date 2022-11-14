@@ -5,16 +5,7 @@ build:
 env:
 	bash make_env.sh
 laravel-install:
-	docker compose exec app composer create-project --prefer-dist laravel/laravel . "8.*"
-vue-router-ts-install:
-	docker compose exec app composer require laravel/ui 3.*
-	docker compose exec app npm install -save-dev vue@next vue-router@4 ts-loader typescript
-	docker compose exec app npm install
-	mv -f welcome.blade.php backend/resources/views
-	mv -f webpack.mix.js backend
-	mv -f web.php backend/routes
-	mv tsconfig.json backend
-	mv ts backend/resources
+	docker compose exec app composer create-project --prefer-dist laravel/laravel . "9.*"
 create-project:
 	mkdir -p backend
 	@make env

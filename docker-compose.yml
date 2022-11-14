@@ -11,8 +11,10 @@ services:
       context: .
       dockerfile: ./infra/docker/nginx/Dockerfile
       args:
-          - USER_ID=${USER_ID}
-          - GROUP_ID=${GROUP_ID}
+        - USER_ID=${USER_ID}
+        - GROUP_ID=${GROUP_ID}
+        - USER_NAME=${USER_NAME}
+        - GROUP_NAME=${GROUP_NAME}
     ports:
       - target: 8080
         published: ${WEB_PORT}
@@ -34,6 +36,8 @@ services:
       args:
         - USER_ID=${USER_ID}
         - GROUP_ID=${GROUP_ID}
+        - USER_NAME=${USER_NAME}
+        - GROUP_NAME=${GROUP_NAME}
     volumes:
       - type: volume
         source: php-fpm-socket
