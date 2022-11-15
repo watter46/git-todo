@@ -75,7 +75,7 @@
         return "- [ ] ";
     }
 
-    //関数の実行
+    //関数の実行 (ボタン)
     addTask = () => {
         // コマンドを保存
         setTaskCommand();
@@ -86,10 +86,7 @@
         // Todo: 行の間にtaskcommandを入力する処理を書く
         if (textarea)
         {
-            // カーソルの位置を取得
-            // textarea_element.value = textarea + getTaskCommand();
-            // textarea_element.focus()
-            // onPreventEvent();
+            console.log("true")
 
             const position     = textarea_element.selectionStart;
             const length       = textarea.length;
@@ -125,6 +122,7 @@
         /* textareaに文字がないとき */
         if (!textarea)
         {
+            console.log("false")
             textarea_element.value = textarea + getTaskCommand();
             textarea_element.focus()
         }
@@ -154,13 +152,14 @@
 
 
             // コマンドを入力した上の行がコマンドではない場合の処理
-            // 最終行がコマンドのみではない場合の処理
+            // すでにコマンドがあるときEnterでコマンドを追加
             if (!(last_line === getTaskCommand())) {
-                console.log("コマンド出ない")
+                console.log("コマンドでない")
 
                 // 先頭にコマンドがある場合
                 if (last_line.substr(0, 6) === getTaskCommand())
                 {
+                    console.log(textarea_element)
                     addTask()
                     onPreventEvent()
                 }
